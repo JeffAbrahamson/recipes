@@ -1,4 +1,4 @@
-all: cover.ps cover.pdf recipes.ps recipes.pdf
+all: recipes.pdf
 
 recipes.ps: recipes.dvi recipe-macros.tex book-format.tex Makefile
 #	dvips -f recipes.dvi -o recipes.ps
