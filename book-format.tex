@@ -1,0 +1,39 @@
+% Goofy playing with margins to get the end result (book.ps) to look right.
+% This seems to work well for recipes.ps:
+%\usepackage[papersize={5.5in,8.5in},top=1.25in,bottom=.25in,twoside,bindingoffset=.5in,left=.5in,right=.5in]{geometry}
+% This seems to work well for book.ps (US):
+%\usepackage[papersize={5.5in,8.5in},top=1.75in,bottom=.25in,twoside,bindingoffset=.5in,left=.5in,right=.5in]{geometry}
+% This hopefully works well for book.ps (EU, A3):
+\usepackage[papersize={148mm,210mm},top=35mm,bottom=8mm,twoside,bindingoffset=20mm,left=12.7mm,right=30mm]{geometry}
+
+%% Debian's latex installation (tetex) used to use fancyheaders
+%\usepackage{fancyheadings}
+%% But with the transition to TeX Live, it wants fancyhdr
+\usepackage{fancyhdr}
+
+%% If these lengths are set here (instead of in \usepackage{geometry},
+%% above, the page doesn't center properly.
+% \setlength{\paperheight}{8.5in}
+% \setlength{\paperwidth}{5.5in}
+% \setlength{\textwidth}{4.25in}
+% \setlength{\textheight}{7in}
+% \setlength{\oddsidemargin}{1.25in}
+% \setlength{\evensidemargin}{.5in}
+
+\thispagestyle{empty}
+\setlength{\parskip}{8pt}
+\raggedright
+
+\pagestyle{fancyplain}
+%\addtolength{\headwidth}{\marginparsep}
+%\addtolength{\headwidth}{\marginparwidth}
+%   Remember chapter title
+\renewcommand{\chaptermark}[1] {\markboth{#1}{#1}}
+%   section number and title
+%\renewcommand{\sectionmark}[1] {\markright{\thesection\ #1}}
+\renewcommand{\sectionmark}[1] {\markright{\thechapter\ #1}}
+\lhead[\fancyplain{}{\bfseries\thepage}]%
+      {\fancyplain{}{\bfseries\rightmark}}
+\rhead[\fancyplain{}{\bfseries\leftmark}]%
+      {\fancyplain{}{\bfseries\thepage}}
+\cfoot{}
