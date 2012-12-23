@@ -1,0 +1,89 @@
+\documentclass[]{book}
+
+\include{book-format}
+\include{recipe-macros}
+
+
+\bibliographystyle{plain}
+
+\begin{document}
+%\pagestyle{plain}
+
+\frontmatter
+
+\tableofcontents
+
+
+\mainmatter
+
+% \framebox[.5in]{.5 in}\\
+% \framebox[\oddsidemargin]{odd}\\
+% \framebox[1.25in]{1.25 in}\\
+% \framebox[\evensidemargin]{even}
+
+%\newcommand{\recipechapter}[1]%
+%    \chapter*{#1}%
+%    \addtocontents{toc}{#1}
+
+\chapter*{Breakfasts}
+\addtocontents{toc}{Breakfasts}
+\chaptermark{Breakfasts}
+%\recipechapter{Breakfasts}
+\input{breakfasts/index.tex}
+
+\chapter*{Salads}
+\addtocontents{toc}{Salads}
+\chaptermark{Salads}
+\input{salads/index.tex}
+
+\chapter*{Odds and Ends}
+\addtocontents{toc}{Odds and Ends}
+\chaptermark{Odds and Ends}
+\input{misc/index.tex}
+
+\chapter*{Soup}
+\addtocontents{toc}{Soup}
+\chaptermark{Soup}
+\input{soup/index.tex}
+
+\chapter*{Side Dishes}
+\addtocontents{toc}{Side Dishes}
+\chaptermark{Side Dishes}
+\input{sides/index.tex}
+
+\chapter*{Main Dishes}
+\addtocontents{toc}{Main Dishes}
+\chaptermark{Main Dishes}
+\input{mains/index.tex}
+
+\chapter*{Desserts}
+\addtocontents{toc}{Desserts}
+\chaptermark{Desserts}
+\input{desserts/index.tex}
+
+\backmatter
+
+\chapter*{Bibliography}
+\addtocontents{toc}{Bibliography}
+\chaptermark{Bibliography}
+%\input{bib.tex}
+\bibliography{recipes}
+
+\chapter*{Index}
+\addtocontents{toc}{Index}
+\chaptermark{Index}
+\printindex
+
+\end{document}
+
+%% Recipes to enter:
+% pound cake (Katzten)
+% tJoC pancakes
+
+
+%% To do
+% Bib / Index in TOC
+
+
+
+

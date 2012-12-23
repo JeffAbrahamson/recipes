@@ -1,0 +1,71 @@
+%\usepackage[frenchb]{babel}
+%\usepackage{draftcopy}
+\usepackage{url}
+\usepackage{makeidx}
+\usepackage[utf8]{inputenc}
+
+\makeindex
+
+\newenvironment{ingredients}{\bigskip\normalsize%
+  \begin{tabular}%
+    {l p{.8\textwidth}}}%
+  {\end{tabular}}
+\newenvironment{recipe}{\bigskip\normalsize}{}
+
+\newcommand{\dish}[1]{{\pagebreak %
+    \addcontentsline{toc}{section}{#1} %
+    \index{#1} %
+    \begin{center}\Large #1\end{center}}}
+\newcommand\subdish[1]{\index{#1} \begin{center}(\large #1)\end{center}}
+\newcommand{\altdish}[1]{\index{#1}}
+\newcommand{\alsodish}[1]{\centerline{also known as}\par%
+  \begin{center}%
+    \Large #1 %
+    \index{#1}%
+  \end{center}}
+%
+\newcommand{\serves}[1]{\begin{center}\footnotesize Serves #1 \end{center}}
+\newcommand{\pour}[1]{\begin{center}\footnotesize Pour #1 personnes \end{center}}
+\newcommand{\pourD}[2]{\begin{center}\footnotesize%
+    Pour #1 personnes (#2)%
+  \end{center}}
+%
+\newcommand{\makes}[1]{\begin{center}\footnotesize Makes #1 \end{center}}
+\newcommand{\fait}[1]{\begin{center}\footnotesize Fait #1 \end{center}}
+%
+\newcommand{\prep}[1]{\bigskip{\footnotesize #1 }}
+\newcommand{\ingr}[3]{#1 #2& #3 \\ }
+%
+\newcommand{\sourcep}[1]{\par\footnotesize Source: \textrm{(#1) }}
+\newcommand{\source}[1]{\par\footnotesize Source: \textrm{\cite{#1} }%
+  \normalsize }
+\newcommand{\sourceD}[2]{\par\footnotesize Source: \textrm{\cite{#1}, #2 }%
+  \normalsize }
+
+\newcommand{\F}[0]{~$^\circ$F}
+\newcommand{\C}[0]{~$^\circ$C}
+\newcommand{\FC}[2]{{{#1}\F} {({#2}\C})}
+\newcommand{\CF}[2]{{{#1}\C} {({#2}\F})}
+
+\newcommand{\fracE}[0]{$^1\!/\!_8$ }
+\newcommand{\fracEE}[0]{$^3\!/\!_8$ }
+\newcommand{\fracEEE}[0]{$^5\!/\!_8$ }
+\newcommand{\fracEEEE}[0]{$^7\!/\!_8$ }
+
+\newcommand{\fracQ}[0]{$^1\!/\!_4$ }
+\newcommand{\fracQQ}[0]{$^3\!/\!_4$ }
+
+\newcommand{\fracT}[0]{$^1\!/\!_3$ }
+\newcommand{\fracTT}[0]{$^2\!/\!_3$ }
+
+\newcommand{\fracH}[0]{$^1\!/\!_2$ }
+
+\newcommand{\cs}[0]{c. \`a soupe}
+\newcommand{\ccf}[0]{c. \`a caf\'e}
+
+\newcommand{\tsp}[0]{tsp}
+\newcommand{\tbsp}[0]{Tbsp}
+
+\newcommand\stage[1]{\bigskip\textbf{#1}}
+
+\newcommand\accord[1]{\textit{Le bon accord : #1.}}
