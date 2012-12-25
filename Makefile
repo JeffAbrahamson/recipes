@@ -1,11 +1,11 @@
-all: recipes.pdf
+all: gs2.pdf galaxy-tab-10.1.pdf gs3.pdf ipad.pdf iphone4.pdf iphone5.pdf
 
-recipes.pdf: indices recipe-macros.tex book-format.tex Makefile
-	pdflatex -interaction=nonstopmode recipes.tex
-	makeindex recipes.idx
-	bibtex recipes
-	pdflatex -interaction=nonstopmode recipes.tex
-	pdflatex -interaction=nonstopmode recipes.tex
+%.pdf: %.tex indices recipe-macros.tex book-format.tex Makefile
+	pdflatex -interaction=nonstopmode $<
+	makeindex $(*F).idx
+	bibtex $(*F)
+	pdflatex -interaction=nonstopmode $<
+	pdflatex -interaction=nonstopmode $<
 
 indices:
 	for f in desserts mains salads breakfasts misc sides soup; do \
