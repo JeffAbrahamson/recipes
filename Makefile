@@ -6,6 +6,7 @@ all: gs2.pdf galaxy-tab-10.1.pdf gs3.pdf ipad.pdf iphone4.pdf iphone5.pdf
 	bibtex $(*F)
 	pdflatex -interaction=nonstopmode $<
 	pdflatex -interaction=nonstopmode $<
+	mv $@ pdf/$@
 
 indices:
 	for f in desserts mains salads breakfasts misc sides soup; do \
