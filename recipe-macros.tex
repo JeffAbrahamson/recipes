@@ -35,12 +35,17 @@
 %
 \newcommand{\prep}[1]{\bigskip{\footnotesize #1 }}
 \newcommand{\ingr}[3]{#1 #2& #3 \\ }
+% An ingredient with some space after it
+\newcommand{\ingrS}[3]{#1 #2& #3 \\[2mm] }
 %
-\newcommand{\sourcep}[1]{\par\footnotesize Source: \textrm{(#1) }}
+% Standard bibliographic source
 \newcommand{\source}[1]{\par\footnotesize Source: \textrm{\cite{#1} }%
   \normalsize }
+% Bibliographic source with annotation (page number, who provided, etc.)
 \newcommand{\sourceD}[2]{\par\footnotesize Source: \textrm{\cite{#1}, #2 }%
   \normalsize }
+% Free-form source
+\newcommand{\sourcep}[1]{\par\footnotesize Source: \textrm{(#1) }}
 
 \newcommand{\F}[0]{~$^\circ$F}
 \newcommand{\C}[0]{~$^\circ$C}
