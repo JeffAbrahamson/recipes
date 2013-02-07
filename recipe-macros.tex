@@ -6,6 +6,8 @@
 
 \makeindex
 
+\newcommand{\headerformat}[0]{\footnotesize\hspace{4mm}}
+
 \newenvironment{ingredients}{\bigskip\normalsize%
   \begin{tabular}%
     {l p{.8\textwidth}}}%
@@ -24,28 +26,28 @@
     \index{#1}%
   \end{center}}
 %
-\newcommand{\serves}[1]{\begin{center}\footnotesize Serves #1 \end{center}}
-\newcommand{\pour}[1]{\begin{center}\footnotesize Pour #1 personnes \end{center}}
-\newcommand{\pourD}[2]{\begin{center}\footnotesize%
+\newcommand{\serves}[1]{\begin{center}\headerformat Serves #1 \end{center}}
+\newcommand{\pour}[1]{\begin{center}\headerformat Pour #1 personnes \end{center}}
+\newcommand{\pourD}[2]{\begin{center}\headerformat%
     Pour #1 personnes (#2)%
   \end{center}}
 %
-\newcommand{\makes}[1]{\begin{center}\footnotesize Makes #1 \end{center}}
-\newcommand{\fait}[1]{\begin{center}\footnotesize Fait #1 \end{center}}
+\newcommand{\makes}[1]{\begin{center}\headerformat Makes #1 \end{center}}
+\newcommand{\fait}[1]{\begin{center}\headerformat Fait #1 \end{center}}
 %
-\newcommand{\prep}[1]{\bigskip{\footnotesize #1 }}
+\newcommand{\prep}[1]{\bigskip{\headerformat #1 }}
 \newcommand{\ingr}[3]{#1 #2& #3 \\ }
 % An ingredient with some space after it
 \newcommand{\ingrS}[3]{#1 #2& #3 \\[2mm] }
 %
 % Standard bibliographic source
-\newcommand{\source}[1]{\par\footnotesize Source: \textrm{\cite{#1} }%
+\newcommand{\source}[1]{\par\headerformat Source: \textrm{\cite{#1} }%
   \normalsize }
 % Bibliographic source with annotation (page number, who provided, etc.)
-\newcommand{\sourceD}[2]{\par\footnotesize Source: \textrm{\cite{#1}, #2 }%
+\newcommand{\sourceD}[2]{\par\headerformat Source: \textrm{\cite{#1}, #2 }%
   \normalsize }
 % Free-form source
-\newcommand{\sourcep}[1]{\par\footnotesize Source: \textrm{(#1) }}
+\newcommand{\sourcep}[1]{\par\headerformat Source: \textrm{(#1) }}
 
 \newcommand{\F}[0]{~$^\circ$F}
 \newcommand{\C}[0]{~$^\circ$C}
