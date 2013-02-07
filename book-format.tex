@@ -2,7 +2,7 @@
 \usepackage[UKenglish]{isodate}
 
 %% Supported screen resolutions
-\usepackage[papersize={\pdfpagewidth,\pdfpageheight},top=5pt,bottom=5pt,left=3pt,right=3pt]{geometry}
+\usepackage[papersize={\pdfpagewidth,\pdfpageheight},top=42pt,bottom=13pt,left=10pt,right=10pt]{geometry}
 
 
 %% Debian's latex installation (tetex) used to use fancyheaders
@@ -31,8 +31,8 @@
 %   section number and title
 %\renewcommand{\sectionmark}[1] {\markright{\thesection\ #1}}
 \renewcommand{\sectionmark}[1] {\markright{\thechapter\ #1}}
-\lhead[\fancyplain{}{\bfseries\thepage}]%
+\lhead[\fancyplain{}{\bfseries\leftmark}]%
       {\fancyplain{}{\bfseries\rightmark}}
-\rhead[\fancyplain{}{\bfseries\leftmark}]%
+\rhead[\fancyplain{}{\bfseries\thepage}]%
       {\fancyplain{}{\bfseries\thepage}}
 \cfoot{}
