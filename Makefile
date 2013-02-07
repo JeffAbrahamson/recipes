@@ -1,4 +1,4 @@
-all: gs2.pdf galaxy-tab-10.1.pdf gs3.pdf ipad.pdf iphone4.pdf iphone5.pdf
+all: recipes-gs2.pdf recipes-galaxy-tab-10.1.pdf recipes-gs3.pdf recipes-ipad.pdf recipes-iphone4.pdf recipes-iphone5.pdf
 
 %.pdf: %.tex indices recipe-macros.tex book-format.tex Makefile
 	pdflatex -interaction=nonstopmode $<
