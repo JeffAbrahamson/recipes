@@ -4,7 +4,11 @@ recipes
 Recipes and LaTeX
 
 
-To use these recipes, you probably want to git clone and type make.
+To use these recipes, you may want to git clone and type make.  But if
+you just want to read the recipes, however, this page may be more
+interesting:
+
+    http://jeff.purple.com/recipes.html
 
 
 This is my collection of recipes.  I hold copyright for the recipes
