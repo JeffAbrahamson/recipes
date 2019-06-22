@@ -1,11 +1,11 @@
 all: recipes-nexus9.pdf recipes-nexus5.pdf recipes-ipad.pdf recipes-laptop.pdf
 
 %.pdf: %.tex indices recipe-macros.tex book-format.tex Makefile
-	pdflatex -interaction=nonstopmode $<
+	xelatex -interaction=nonstopmode $<
 	makeindex $(*F).idx
 	bibtex $(*F)
-	pdflatex -interaction=nonstopmode $<
-	pdflatex -interaction=nonstopmode $<
+	xelatex -interaction=nonstopmode $<
+	xelatex -interaction=nonstopmode $<
 	mv $@ pdf/$@
 
 indices:
@@ -18,4 +18,4 @@ web: recipes.pdf
 	cp recipes.pdf ~/public_html/purple/jeff/private/recipes.pdf
 
 clean:
-	rm -f *.pdf *.log recipes.bbl recipes.blg recipes.idx recipes.ind recipes.toc recipes.ilg *.aux
+	rm -f *.pdf *.log *.bbl *.blg *.idx *.ind *.toc *.ilg *.aux *.out

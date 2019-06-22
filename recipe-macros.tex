@@ -2,7 +2,8 @@
 %\usepackage{draftcopy}
 \usepackage{url}
 \usepackage{makeidx}
-\usepackage[utf8]{inputenc}
+%\usepackage[utf8]{inputenc}
+\usepackage{xeCJK}
 
 \makeindex
 
@@ -50,9 +51,9 @@
 \newcommand{\sourcep}[1]{\par\headerformat Source: \textrm{#1}}
 
 \newcommand{\F}[0]{~$^\circ$F}
-\newcommand{\C}[0]{~$^\circ$C}
-\newcommand{\FC}[2]{{{#1}\F} {({#2}\C})}
-\newcommand{\CF}[2]{{{#1}\C} {({#2}\F})}
+\newcommand{\degreeC}[0]{~$^\circ$C}
+\newcommand{\FC}[2]{{{#1}\F} {({#2}\degreeC})}
+\newcommand{\CF}[2]{{{#1}\degreeC} {({#2}\F})}
 
 \newcommand{\fracE}[0]{$^1\!/\!_8$ }
 \newcommand{\fracEE}[0]{$^3\!/\!_8$ }
