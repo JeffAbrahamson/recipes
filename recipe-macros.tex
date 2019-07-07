@@ -22,11 +22,8 @@
     \begin{center}\Large #1\end{center}}}
 \newcommand\subdish[1]{\index{#1} \begin{center}(\large #1)\end{center}}
 \newcommand{\altdish}[1]{\index{#1}}
-\newcommand{\alsodish}[1]{\centerline{also known as}\par%
-  \begin{center}%
-    \Large #1 %
-    \index{#1}%
-  \end{center}}
+\newcommand{\alsodish}[1]{\centerline{\footnotesize\it (also known as)}\par%
+  \centerline{\large #1} \index{#1}}
 %
 \newcommand{\serves}[1]{\begin{center}\headerformat Serves #1 \end{center}}
 \newcommand{\pour}[1]{\begin{center}\headerformat Pour #1 personnes \end{center}}
