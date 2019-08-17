@@ -6,7 +6,7 @@ all: recipes-nexus9.pdf recipes-nexus5.pdf recipes-ipad.pdf recipes-laptop.pdf
 	bibtex $(*F)
 	xelatex -interaction=nonstopmode $<
 	xelatex -interaction=nonstopmode $<
-	mv $@ pdf/$@
+	/bin/mv $@ pdf/$@
 
 indices:
 	for f in desserts mains salads breakfasts misc sides soup; do \
