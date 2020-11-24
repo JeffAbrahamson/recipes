@@ -14,6 +14,11 @@
   \begin{tabular}%
     {l p{.8\textwidth}}}%
   {\end{tabular}}
+% For recipes presented in two sizes (e.g., half batch)
+\newenvironment{ingredientss}{\bigskip\normalsize%
+  \begin{tabular}%
+    {l | l p{.8\textwidth}}}%
+  {\end{tabular}}
 \newenvironment{recipe}{\bigskip\normalsize}{}
 
 \newcommand{\dish}[1]{{\pagebreak %
@@ -37,8 +42,11 @@
 %
 \newcommand{\prep}[1]{\bigskip{\headerformat #1 }}
 \newcommand{\ingr}[3]{#1 #2& #3 \\ }
+\newcommand{\ingrr}[4]{ #1  &  #2  #3  &  #4  \\ }
 % An ingredient with some space after it
 \newcommand{\ingrS}[3]{#1 #2& #3 \\[2mm] }
+\newcommand{\ingrrS}[4]{#1 & #2 #3 & #4 \\[2mm] }
+\newcommand{\ingrrT}[2]{\underline{#1} & \underline{#2} & \\[2mm] }
 %
 % Standard bibliographic source
 \newcommand{\source}[1]{\par\headerformat Source: \textrm{\cite{#1} }%
