@@ -23,6 +23,8 @@ The build pipeline for each PDF: `xelatex` → `makeindex` → `bibtex` → `xel
 
 **Requires**: `xelatex`, `makeindex`, `bibtex`, and the Noto CJK fonts (for Japanese support).
 
+Before committing a change that touches `.tex` content, rebuild the affected PDF(s) and check the `xelatex` log for "Missing character" or "undefined" warnings — fix these before committing rather than after.
+
 ## Adding a recipe
 
 1. Create a `.tex` file in the appropriate chapter directory (`breakfasts/`, `salads/`, `misc/`, `soup/`, `sides/`, `mains/`, `desserts/`).
@@ -107,6 +109,12 @@ Apply this even when the source is verbose. The goal is the minimum a competent 
 - `to-format/` — recipes in various raw formats waiting to be converted to LaTeX
 - `to-try/` — recipes to try before committing
 - `INCOMING.txt` — quick notes for recipes to add
+
+When importing a recipe from a large source (a full web page, a long PDF, a bulky file in `to-format/`), consider delegating the fetch/extraction to a subagent so the raw source text doesn't stay in context after the converted `.tex` is written — the source itself isn't needed once the recipe is in the target format.
+
+## Git
+
+See `.claude/skills/git-workflow/SKILL.md` for worktree, staging, and commit-timing conventions.
 
 ## Commit messages
 
