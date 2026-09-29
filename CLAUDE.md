@@ -23,7 +23,7 @@ The build pipeline for each PDF: `xelatex` → `makeindex` → `bibtex` → `xel
 
 **Requires**: `xelatex`, `makeindex`, `bibtex`, and the Noto CJK fonts (for Japanese support).
 
-Before committing a change that touches `.tex` content, rebuild the affected PDF(s) and check the `xelatex` log for "Missing character" or "undefined" warnings — fix these before committing rather than after.
+Before committing a change that touches `.tex` content, rebuild the affected PDF(s) and check the `xelatex` log for "Missing character" or "undefined" warnings — fix these before committing rather than after. A single-target build is enough while iterating, but run a full `make` right before committing so all four PDFs in `pdf/` stay in sync with the sources — never commit source changes alongside stale PDFs. Build commands may be run without asking first. If the toolchain isn't available in the current environment, say so explicitly and ask the user to build and check before committing, rather than skipping the check silently.
 
 ## Adding a recipe
 
@@ -111,6 +111,8 @@ Apply this even when the source is verbose. The goal is the minimum a competent 
 - `INCOMING.txt` — quick notes for recipes to add
 
 When importing a recipe from a large source (a full web page, a long PDF, a bulky file in `to-format/`), consider delegating the fetch/extraction to a subagent so the raw source text doesn't stay in context after the converted `.tex` is written — the source itself isn't needed once the recipe is in the target format.
+
+More generally, delegate to a subagent when a subtask would pull a lot of disposable bulk (search results, long file dumps, exploratory research) into context that isn't needed once the task is done, or when a narrow, well-specified job is better suited to a different model. Don't delegate trivial edits (a single recipe tweak, a short lookup) — spawn overhead and lost shared context cost more than doing it inline.
 
 ## Git
 

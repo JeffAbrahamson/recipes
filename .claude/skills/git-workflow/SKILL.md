@@ -13,10 +13,21 @@ has no extra worktrees active — they can get spun up ad hoc later.
 
 ## Staging new files
 
-`git add --intent-to-add` new files as soon as they're created, before
-asking for review — so `git status`/`git diff` show that the file
-exists and needs reviewing, rather than it sitting untracked and easy
-to miss.
+`git add --intent-to-add` new files as soon as they're created — right
+after the Write that creates them, not batched at commit time — so
+`git status`/`git diff` show that the file exists and needs reviewing,
+rather than it sitting untracked and easy to miss.
+
+## Review before commit
+
+Before proposing a commit for anything beyond a trivial one-line
+change, re-read the diff once against `CLAUDE.md`'s recipe conventions
+(tone/word-economy rules, ingredient ordering, macro usage) and confirm
+the build-log check above has been done. This repo's content is plain
+LaTeX recipe text with no application logic, so unless the change is
+unusually tricky (new macros, structural changes to `recipe-macros.tex`
+or the build pipeline), this review is a good candidate for a
+cheaper/faster model rather than the primary one doing the edit.
 
 ## When to commit
 
@@ -46,3 +57,10 @@ touches GitHub itself — pushing, issues, `gh` — needs specific
 authorisation in the prompt or via a direct question; prefer the local
 equivalent when one exists (e.g. `git merge --ff-only` over `gh pr
 merge`).
+
+## Push policy
+
+Never run `git push` in any form, including to the agent's own branch,
+unless the prompt explicitly asks for it — approval for one push
+doesn't carry over to the next. An authorised force-push is always
+`git push --force-with-lease`, never bare `--force`/`-f`.
