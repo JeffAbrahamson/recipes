@@ -118,6 +118,11 @@ More generally, delegate to a subagent when a subtask would pull a lot of dispos
 
 See `.claude/skills/git-workflow/SKILL.md` for worktree, staging, and commit-timing conventions.
 
+`git add --intent-to-add` new files as soon as they're created — right
+after the Write that creates them, not batched at commit time — so
+`git status`/`git diff` show that the file exists and needs reviewing,
+rather than it sitting untracked and easy to miss.
+
 ## Commit messages
 
 In general, a commit message should just indicate what recipe(s) were
