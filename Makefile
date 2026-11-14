@@ -13,9 +13,5 @@ indices:
 		./make-dir $$f > $$f/index.tex; \
 	done
 
-# A bit personal to me, maybe I can make this more general some day
-web: recipes.pdf
-	cp recipes.pdf ~/public_html/purple/jeff/private/recipes.pdf
-
 clean:
 	rm -f *.pdf *.log *.bbl *.blg *.idx *.ind *.toc *.ilg *.aux *.out
